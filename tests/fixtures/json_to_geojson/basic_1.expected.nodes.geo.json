@@ -1,0 +1,42 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.174,
+                    5.625
+                ]
+            },
+            "properties": {
+                "id": "1",
+                "name": "Accra",
+                "network": {
+                    "id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+                    "name": "Ghana Fibre Network"
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.628,
+                    6.711
+                ]
+            },
+            "properties": {
+                "id": "2",
+                "name": "Kumasi",
+                "status": "operational",
+                "network": {
+                    "id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+                    "name": "Ghana Fibre Network"
+                }
+            }
+        }
+    ]
+}

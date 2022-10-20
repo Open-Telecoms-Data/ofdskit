@@ -1,0 +1,126 @@
+{
+  "networks": [
+    {
+      "id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+      "name": "Ghana Fibre Network",
+      "nodes": [
+        {
+          "id": "1",
+          "name": "Accra",
+          "location": {
+            "type": "Point",
+            "coordinates": [
+              -0.174,
+              5.625
+            ]
+          },
+          "physicalInfrastructureProvider": {
+            "id": "GH-RGD-CS111111111"
+          },
+          "networkProvider": {
+            "id": "GH-RGD-CS222222222"
+          }
+        },
+        {
+          "id": "2",
+          "name": "Kumasi",
+          "status": "operational",
+          "location": {
+            "type": "Point",
+            "coordinates": [
+              -1.628,
+              6.711
+            ]
+          },
+          "physicalInfrastructureProvider": {
+            "id": "GH-RGD-CS111111111"
+          },
+          "networkProvider": {
+            "id": "GH-RGD-CS222222222"
+          }
+        }
+      ],
+      "spans": [
+        {
+          "id": "1",
+          "name": "Accra to Kumasi",
+          "start": "1",
+          "end": "2",
+          "route": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -0.173,
+                5.626
+              ],
+              [
+                -0.178,
+                5.807
+              ],
+              [
+                -0.112,
+                5.971
+              ],
+              [
+                -0.211,
+                5.963
+              ],
+              [
+                -0.321,
+                6.170
+              ],
+              [
+                -0.488,
+                6.290
+              ],
+              [
+                -0.560,
+                6.421
+              ],
+              [
+                -0.752,
+                6.533
+              ],
+              [
+                -0.867,
+                6.607
+              ],
+              [
+                -1.101,
+                6.585
+              ],
+              [
+                -1.304,
+                6.623
+              ],
+              [
+                -1.461,
+                6.727
+              ],
+              [
+                -1.628,
+                6.713
+              ]
+            ]
+          },
+          "physicalInfrastructureProvider": {
+            "id": "GH-RGD-CS111111111"
+          },
+          "networkProvider": {
+            "id": "GH-RGD-CS222222222"
+          }
+        }
+      ],
+      "organisations": [
+        {
+          "id": "GH-RGD-CS111111111",
+          "name": "FibreCo"
+        },
+        {
+          "id": "GH-RGD-CS222222222",
+          "name": "FastWeb"
+        }
+      ]
+    }
+  ]
+}

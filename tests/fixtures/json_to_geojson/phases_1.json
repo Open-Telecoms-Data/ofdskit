@@ -1,0 +1,126 @@
+{
+  "networks": [
+    {
+      "id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+      "name": "Ghana Fibre Network",
+      "nodes": [
+        {
+          "id": "1",
+          "name": "Accra",
+          "location": {
+            "type": "Point",
+            "coordinates": [
+              -0.174,
+              5.625
+            ]
+          },
+          "phase": {
+            "id": "1"
+          }
+        },
+        {
+          "id": "2",
+          "name": "Kumasi",
+          "status": "operational",
+          "location": {
+            "type": "Point",
+            "coordinates": [
+              -1.628,
+              6.711
+            ]
+          },
+          "phase": {
+            "id": "1"
+          }
+        }
+      ],
+      "spans": [
+        {
+          "id": "1",
+          "name": "Accra to Kumasi",
+          "start": "1",
+          "end": "2",
+          "route": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -0.173,
+                5.626
+              ],
+              [
+                -0.178,
+                5.807
+              ],
+              [
+                -0.112,
+                5.971
+              ],
+              [
+                -0.211,
+                5.963
+              ],
+              [
+                -0.321,
+                6.170
+              ],
+              [
+                -0.488,
+                6.290
+              ],
+              [
+                -0.560,
+                6.421
+              ],
+              [
+                -0.752,
+                6.533
+              ],
+              [
+                -0.867,
+                6.607
+              ],
+              [
+                -1.101,
+                6.585
+              ],
+              [
+                -1.304,
+                6.623
+              ],
+              [
+                -1.461,
+                6.727
+              ],
+              [
+                -1.628,
+                6.713
+              ]
+            ]
+          },
+          "phase": {
+            "id": "1"
+          }
+        }
+      ],
+      "contracts": [
+        {
+          "id": "1",
+          "title": "NextGen Phase 1 Construction Contract",
+          "description": "Contract for the construction of phase 1 of the NextGen network.",
+          "relatedPhases": [
+            {
+              "id": "1"
+            }
+          ]
+        }
+      ],
+      "phases": [
+        {
+          "id": "1",
+          "name": "NextGen Phase 1",
+          "description": "The first phase of the Ghana Fibre Network NextGen roll-out."
+        }
+      ]
+    }
+  ]
+}
