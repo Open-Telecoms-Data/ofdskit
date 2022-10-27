@@ -1,0 +1,96 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -0.173,
+                        5.626
+                    ],
+                    [
+                        -0.178,
+                        5.807
+                    ],
+                    [
+                        -0.112,
+                        5.971
+                    ],
+                    [
+                        -0.211,
+                        5.963
+                    ],
+                    [
+                        -0.321,
+                        6.17
+                    ],
+                    [
+                        -0.488,
+                        6.29
+                    ],
+                    [
+                        -0.56,
+                        6.421
+                    ],
+                    [
+                        -0.752,
+                        6.533
+                    ],
+                    [
+                        -0.867,
+                        6.607
+                    ],
+                    [
+                        -1.101,
+                        6.585
+                    ],
+                    [
+                        -1.304,
+                        6.623
+                    ],
+                    [
+                        -1.461,
+                        6.727
+                    ],
+                    [
+                        -1.628,
+                        6.713
+                    ]
+                ]
+            },
+            "properties": {
+                "id": "1",
+                "name": "Accra to Kumasi",
+                "start": {
+                    "id": "1",
+                    "name": "Accra",
+                    "location": {
+                        "type": "Point",
+                        "coordinates": [
+                            -0.174,
+                            5.625
+                        ]
+                    }
+                },
+                "end": {
+                    "id": "2",
+                    "name": "Kumasi",
+                    "status": "operational",
+                    "location": {
+                        "type": "Point",
+                        "coordinates": [
+                            -1.628,
+                            6.711
+                        ]
+                    }
+                },
+                "network": {
+                    "id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+                    "name": "Ghana Fibre Network"
+                }
+            }
+        }
+    ]
+}

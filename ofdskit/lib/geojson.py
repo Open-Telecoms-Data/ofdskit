@@ -132,3 +132,83 @@ class JSONToGeoJSONConverter:
         feature["properties"]["network"] = reduced_network_data
 
         return feature
+
+
+class GeoJSONToJSONConverter:
+    def __init__(self):
+        self._networks: dict = {}
+
+    def process_data(self, nodes_data: dict, spans_data: dict) -> None:
+        # Network
+        for geojson_feature in nodes_data.get("features", []):
+            self._process_network(geojson_feature)
+        for geojson_feature in spans_data.get("features", []):
+            self._process_network(geojson_feature)
+
+        # Nodes
+        for geojson_feature in nodes_data.get("features", []):
+            self._process_node(geojson_feature)
+
+        # Spans
+        for geojson_feature in spans_data.get("features", []):
+            self._process_span(geojson_feature)
+
+    def _process_network(self, geojson_feature_node_or_span: dict) -> None:
+        if (
+            "properties" in geojson_feature_node_or_span
+            and "network" in geojson_feature_node_or_span["properties"]
+        ):
+            network = geojson_feature_node_or_span["properties"]["network"]
+            if network.get("id"):
+                # TODO check for inconsistent data here!
+                self._networks[network.get("id")] = copy.deepcopy(network)
+                self._networks[network.get("id")]["nodes"] = []
+                self._networks[network.get("id")]["spans"] = []
+                self._networks[network.get("id")]["phases"] = []
+                self._networks[network.get("id")]["organisations"] = []
+                self._networks[network.get("id")]["contracts"] = []
+
+    def _process_node(self, geojson_feature_node: dict) -> None:
+        node = copy.deepcopy(geojson_feature_node.get("properties", {}))
+        for key_to_remove in ["network"]:
+            if key_to_remove in node:
+                del node[key_to_remove]
+        network_id = (
+            geojson_feature_node.get("properties", {}).get("network", {}).get("id")
+        )
+        if network_id not in self._networks.keys():
+            # TODO log error
+            return
+
+        node["location"] = geojson_feature_node.get("geometry")
+
+        self._networks[network_id]["nodes"].append(node)
+
+    def _process_span(self, geojson_feature_span: dict) -> None:
+        span = copy.deepcopy(geojson_feature_span.get("properties", {}))
+        for key_to_remove in ["network"]:
+            if key_to_remove in span:
+                del span[key_to_remove]
+        network_id = (
+            geojson_feature_span.get("properties", {}).get("network", {}).get("id")
+        )
+        if network_id not in self._networks.keys():
+            # TODO log error
+            return
+
+        span["route"] = geojson_feature_span.get("geometry")
+
+        span["start"] = span.get("start", {}).get("id")
+        span["end"] = span.get("end", {}).get("id")
+
+        self._networks[network_id]["spans"].append(span)
+
+    def get_json(self) -> dict:
+        out: dict = {"networks": []}
+        for network in self._networks.values():
+            # Arrays have minItems: 1 set - so if no content, remove the empty array
+            for key in ["nodes", "spans", "phases", "organisations", "contracts"]:
+                if not network[key]:
+                    del network[key]
+            out["networks"].append(network)
+        return out
