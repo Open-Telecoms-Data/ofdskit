@@ -166,6 +166,7 @@ class GeoJSONToJSONConverter:
                 self._networks[network.get("id")]["spans"] = []
                 self._networks[network.get("id")]["phases"] = []
                 self._networks[network.get("id")]["organisations"] = []
+                self._networks[network.get("id")]["contracts"] = []
 
     def _process_node(self, geojson_feature_node: dict) -> None:
         node = copy.deepcopy(geojson_feature_node.get("properties", {}))
@@ -202,5 +203,12 @@ class GeoJSONToJSONConverter:
 
         self._networks[network_id]["spans"].append(span)
 
-    def get_json(self):
-        return {"networks": [v for v in self._networks.values()]}
+    def get_json(self) -> dict:
+        out: dict = {"networks": []}
+        for network in self._networks.values():
+            # Arrays have minItems: 1 set - so if no content, remove the empty array
+            for key in ["nodes", "spans", "phases", "organisations", "contracts"]:
+                if not network[key]:
+                    del network[key]
+            out["networks"].append(network)
+        return out
