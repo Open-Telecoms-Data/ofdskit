@@ -69,7 +69,12 @@ class JSONToGeoJSONConverter:
 
         reduced_node_data = copy.deepcopy(node_data)
 
-        feature = {"type": "Feature", "geometry": reduced_node_data.pop("location")}
+        feature = {
+            "type": "Feature",
+            "geometry": reduced_node_data.pop("location")
+            if isinstance(reduced_node_data.get("location"), dict)
+            else None,
+        }
 
         # Dereference organisation references
         for organisationReference in [
@@ -103,7 +108,12 @@ class JSONToGeoJSONConverter:
 
         reduced_span_data = copy.deepcopy(span_data)
 
-        feature = {"type": "Feature", "geometry": reduced_span_data.pop("route")}
+        feature = {
+            "type": "Feature",
+            "geometry": reduced_span_data.pop("route")
+            if isinstance(reduced_span_data.get("route"), dict)
+            else None,
+        }
 
         # Dereference organisation references
         for organisationReference in [
