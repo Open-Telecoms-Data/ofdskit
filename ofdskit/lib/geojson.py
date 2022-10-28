@@ -190,7 +190,8 @@ class GeoJSONToJSONConverter:
             # TODO log error
             return
 
-        node["location"] = geojson_feature_node.get("geometry")
+        if geojson_feature_node.get("geometry"):
+            node["location"] = geojson_feature_node["geometry"]
 
         self._networks[network_id]["nodes"].append(node)
 
@@ -206,7 +207,8 @@ class GeoJSONToJSONConverter:
             # TODO log error
             return
 
-        span["route"] = geojson_feature_span.get("geometry")
+        if geojson_feature_span.get("geometry"):
+            span["route"] = geojson_feature_span["geometry"]
 
         span["start"] = span.get("start", {}).get("id")
         span["end"] = span.get("end", {}).get("id")

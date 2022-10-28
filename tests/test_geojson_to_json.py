@@ -8,6 +8,8 @@ from ofdskit.lib.geojson import GeoJSONToJSONConverter
 GEOJSON_TO_JSON_FILES = [
     # basic example
     ("basic_1"),
+    # no locations / route set
+    ("no_geometry_1"),
 ]
 
 
