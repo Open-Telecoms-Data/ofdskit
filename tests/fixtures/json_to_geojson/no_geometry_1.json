@@ -1,0 +1,27 @@
+{
+  "networks": [
+    {
+      "id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+      "name": "Ghana Fibre Network",
+      "nodes": [
+        {
+          "id": "1",
+          "name": "Accra"
+        },
+        {
+          "id": "2",
+          "name": "Kumasi",
+          "status": "operational"
+        }
+      ],
+      "spans": [
+        {
+          "id": "1",
+          "name": "Accra to Kumasi",
+          "start": "1",
+          "end": "2"
+        }
+      ]
+    }
+  ]
+}

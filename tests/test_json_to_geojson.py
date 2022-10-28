@@ -12,6 +12,8 @@ JSON_TO_GEOJSON_FILES = [
     ("phases_1"),
     # Organisations derefed
     ("organisations_1"),
+    # no locations / route set
+    ("no_geometry_1"),
 ]
 
 

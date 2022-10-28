@@ -8,19 +8,31 @@ def main():
     parser = argparse.ArgumentParser(description="OFDSKit")
     subparsers = parser.add_subparsers(dest="subparser_name")
 
-    json_to_geojson_parser = subparsers.add_parser("jsontogeojson")
-    json_to_geojson_parser.add_argument("inputfilename")
-    json_to_geojson_parser.add_argument("outputnodesfilename")
-    json_to_geojson_parser.add_argument("outputspansfilename")
+    json_to_geojson_parser = subparsers.add_parser("jsontogeojson", aliases=["jtogj"])
+    json_to_geojson_parser.add_argument(
+        "inputfilename", help="File name of an input JSON data file"
+    )
+    json_to_geojson_parser.add_argument(
+        "outputnodesfilename", help="Output filename to write Nodes GeoJSON data to"
+    )
+    json_to_geojson_parser.add_argument(
+        "outputspansfilename", help="Output filename to write Spans GeoJSON data to"
+    )
 
-    geojson_to_json_parser = subparsers.add_parser("geojsontojson")
-    geojson_to_json_parser.add_argument("inputnodesfilename")
-    geojson_to_json_parser.add_argument("inputspansfilename")
-    geojson_to_json_parser.add_argument("outputfilename")
+    geojson_to_json_parser = subparsers.add_parser("geojsontojson", aliases=["gjtoj"])
+    geojson_to_json_parser.add_argument(
+        "inputnodesfilename", help="File name of an input Nodes GeoJSON data file"
+    )
+    geojson_to_json_parser.add_argument(
+        "inputspansfilename", help="File name of an input Spans GeoJSON data file"
+    )
+    geojson_to_json_parser.add_argument(
+        "outputfilename", help="Output filename to write JSON data to"
+    )
 
     args = parser.parse_args()
 
-    if args.subparser_name == "jsontogeojson":
+    if args.subparser_name == "jsontogeojson" or args.subparser_name == "jtogj":
 
         with open(args.inputfilename) as fp:
             input_data = json.load(fp)
@@ -34,7 +46,7 @@ def main():
         with open(args.outputspansfilename, "w") as fp:
             json.dump(converter.get_spans_geojson(), fp, indent=4)
 
-    elif args.subparser_name == "geojsontojson":
+    elif args.subparser_name == "geojsontojson" or args.subparser_name == "gjtoj":
 
         with open(args.inputnodesfilename) as fp:
             nodes_data = json.load(fp)
