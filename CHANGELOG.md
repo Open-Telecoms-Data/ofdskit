@@ -12,6 +12,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Json Schema Validate: library and command
 - Python Validate: library and command
 
+### Changed
+
+- GeoJSON to JSON
+  - Makes Phases into references & populates phases array (Nodes, Spans)
+
 ## [0.1.0] - 2022-10-28
 
 - First Release
