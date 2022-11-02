@@ -1,0 +1,37 @@
+[
+  {
+    "network_id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+    "node_id": "1",
+    "type": "node_organisation_reference_id_not_found",
+    "field": "networkProvider"
+  },
+  {
+    "network_id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+    "node_id": "1",
+    "type": "node_organisation_reference_id_not_found",
+    "field": "physicalInfrastructureProvider"
+  },
+  {
+    "network_id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+    "phase_id": "1",
+    "type": "phase_organisation_reference_id_not_found"
+  },
+  {
+    "network_id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+    "span_id": "1",
+    "type": "span_organisation_reference_id_not_found",
+    "field": "networkProvider"
+  },
+  {
+    "network_id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+    "span_id": "1",
+    "type": "span_organisation_reference_id_not_found",
+    "field": "physicalInfrastructureProvider"
+  },
+  {
+    "network_id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+    "span_id": "1",
+    "type": "span_organisation_reference_id_not_found",
+    "field": "supplier"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "networks": [
+    {
+      "id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+      "name": "Ghana Fibre Network",
+      "spans": [
+        {
+          "id": "1",
+          "name": "Accra to Kumasi",
+          "start": "167",
+          "end": "2"
+        }
+      ],
+      "links": [
+        {
+          "href": "http://example.com/",
+          "rel": "tag:opentelecomdata.net,2022:nodesFile"
+        }
+      ]
+    }
+  ]
+}

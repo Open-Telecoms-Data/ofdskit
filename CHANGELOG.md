@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## Added
 
 - Json Schema Validate: library and command
+- Python Validate: library and command
 
 ## [0.1.0] - 2022-10-28
 

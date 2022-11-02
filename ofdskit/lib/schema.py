@@ -24,3 +24,15 @@ class OFDSSchema:
                     out[field + "_id"] = id
         # return
         return out
+
+    def get_link_rels_for_external_nodes(self) -> list:
+        return [
+            "tag:opentelecomdata.net,2022:nodesAPI",
+            "tag:opentelecomdata.net,2022:nodesFile",
+        ]
+
+    def get_link_rels_for_external_spans(self) -> list:
+        return [
+            "tag:opentelecomdata.net,2022:spansAPI",
+            "tag:opentelecomdata.net,2022:spansFile",
+        ]

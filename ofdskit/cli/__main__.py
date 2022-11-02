@@ -3,6 +3,7 @@ import json
 
 import ofdskit.lib.geojson
 import ofdskit.lib.jsonschemavalidate
+import ofdskit.lib.pythonvalidate
 import ofdskit.lib.schema
 
 
@@ -36,6 +37,11 @@ def main():
         "jsonschemavalidate", aliases=["jsv"]
     )
     json_schema_validate_parser.add_argument(
+        "inputfilename", help="File name of an input JSON data file"
+    )
+
+    python_validate_parser = subparsers.add_parser("pythonvalidate", aliases=["pv"])
+    python_validate_parser.add_argument(
         "inputfilename", help="File name of an input JSON data file"
     )
 
@@ -82,6 +88,18 @@ def main():
         output_json = [o.json() for o in output]
 
         print(json.dumps(output_json, indent=4))
+
+    elif args.subparser_name == "pythonvalidate" or args.subparser_name == "pv":
+
+        with open(args.inputfilename) as fp:
+            input_data = json.load(fp)
+
+        schema = ofdskit.lib.schema.OFDSSchema()
+        validator = ofdskit.lib.pythonvalidate.PythonValidate(schema)
+
+        output = validator.validate(input_data)
+
+        print(json.dumps(output, indent=4))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,17 @@
+[
+  {
+    "network_id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+    "contract_id": "1",
+    "type": "contract_related_phase_reference_name_does_not_match"
+  },
+  {
+    "network_id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+    "node_id": "1",
+    "type": "node_phase_reference_name_does_not_match"
+  },
+  {
+    "network_id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+    "span_id": "1",
+    "type": "span_phase_reference_name_does_not_match"
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "networks": [
+    {
+      "id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+      "name": "Ghana Fibre Network",
+      "nodes": [
+        {
+          "id": "1",
+          "name": "Accra",
+          "physicalInfrastructureProvider": {
+            "id": "1",
+            "name": "Nothing Nowhere"
+          },
+          "networkProvider": {
+            "id": "1",
+            "name": "Nothing Nowhere"
+          }
+        },
+        {
+          "id": "2",
+          "name": "Kumasi"
+        }
+      ],
+      "spans": [
+        {
+          "id": "1",
+          "name": "Accra to Kumasi",
+          "physicalInfrastructureProvider": {
+            "id": "1",
+            "name": "Nothing Nowhere"
+          },
+          "networkProvider": {
+            "id": "1",
+            "name": "Nothing Nowhere"
+          },
+          "supplier": {
+            "id": "1",
+            "name": "Nothing Nowhere"
+          },
+          "start": "1",
+          "end": "2"
+        }
+      ],
+      "phases": [
+        {
+          "id": "1",
+          "name": "NextGen Phase 1",
+          "description": "The first phase of the Ghana Fibre Network NextGen roll-out.",
+          "funders": [
+            {
+              "id": "1",
+              "name": "Nothing Nowhere"
+            }
+          ]
+        }
+      ],
+      "organisations": [
+        {
+          "id": "1"
+        }
+      ]
+    }
+  ]
+}

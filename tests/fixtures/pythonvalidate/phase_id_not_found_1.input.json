@@ -1,0 +1,50 @@
+{
+  "networks": [
+    {
+      "id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+      "name": "Ghana Fibre Network",
+      "nodes": [
+        {
+          "id": "1",
+          "name": "Accra",
+          "phase": {
+            "id": "2"
+          }
+        },
+        {
+          "id": "2",
+          "name": "Kumasi"
+        }
+      ],
+      "spans": [
+        {
+          "id": "1",
+          "name": "Accra to Kumasi",
+          "phase": {
+            "id": "2"
+          },
+          "start": "1",
+          "end": "2"
+        }
+      ],
+      "phases": [
+        {
+          "id": "1",
+          "name": "NextGen Phase 1",
+          "description": "The first phase of the Ghana Fibre Network NextGen roll-out."
+        }
+      ],
+      "contracts": [
+        {
+          "id": "1",
+          "title": "NextGen Phase 1 Construction Contract",
+          "relatedPhases": [
+            {
+              "id": "2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
