@@ -1,0 +1,15 @@
+{
+  "networks": [
+    {
+      "id": "a096d627-72e1-4f9b-b129-951b1737bff4",
+      "name": "Ghana Fibre Network",
+      "nodes": [
+        {
+          "id": "1",
+          "name": "Accra",
+          "location": "Somewhere, idunno"
+        }
+      ]
+    }
+  ]
+}

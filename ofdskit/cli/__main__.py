@@ -2,6 +2,8 @@ import argparse
 import json
 
 import ofdskit.lib.geojson
+import ofdskit.lib.jsonschemavalidate
+import ofdskit.lib.schema
 
 
 def main():
@@ -28,6 +30,13 @@ def main():
     )
     geojson_to_json_parser.add_argument(
         "outputfilename", help="Output filename to write JSON data to"
+    )
+
+    json_schema_validate_parser = subparsers.add_parser(
+        "jsonschemavalidate", aliases=["jsv"]
+    )
+    json_schema_validate_parser.add_argument(
+        "inputfilename", help="File name of an input JSON data file"
     )
 
     args = parser.parse_args()
@@ -59,6 +68,20 @@ def main():
 
         with open(args.outputfilename, "w") as fp:
             json.dump(converter.get_json(), fp, indent=4)
+
+    elif args.subparser_name == "jsonschemavalidate" or args.subparser_name == "jsv":
+
+        with open(args.inputfilename) as fp:
+            input_data = json.load(fp)
+
+        schema = ofdskit.lib.schema.OFDSSchema()
+        validators = ofdskit.lib.jsonschemavalidate.JSONSchemaValidator(schema)
+
+        output = validators.validate(input_data)
+
+        output_json = [o.json() for o in output]
+
+        print(json.dumps(output_json, indent=4))
 
 
 if __name__ == "__main__":

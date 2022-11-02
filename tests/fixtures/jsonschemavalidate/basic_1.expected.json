@@ -1,0 +1,24 @@
+[
+    {
+        "message": "'Somewhere, idunno' is not of type 'object'",
+        "path": [
+            "networks",
+            0,
+            "nodes",
+            0,
+            "location"
+        ],
+        "schema_path": [
+            "properties",
+            "networks",
+            "items",
+            "properties",
+            "nodes",
+            "items",
+            "properties",
+            "location",
+            "type"
+        ],
+        "validator": "type"
+    }
+]
