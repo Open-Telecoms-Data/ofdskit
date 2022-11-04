@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Removed
+
+Removed GeoJSON/JSON conversion - this will be in https://pypi.org/project/libcoveofds/ instead
+
 ## [0.1.0] - 2022-10-28
 
 - First Release
